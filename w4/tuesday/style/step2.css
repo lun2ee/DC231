@@ -1,0 +1,15 @@
+span {
+  color: rgb(0, 248, 174);
+}
+div {
+  background-color: aquamarine;
+}
+
+#one {
+  background-color: fuchsia;
+}
+/* 오직 하나만 지정되어있는 얘 -> 특별함 */
+/* id 에 지정한 속성은 우선 순위임  */
+.classname {
+  background-color: rgb(0, 255, 21);
+}
