@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.topNav {
+  background-color: gray;
+  color: white;
+  display: flex;
+  /* 가로정렬해줌 -> ROW 방향 정렬 */
+  /* justify-content 로 가로 방향 정렬 */
+  /* 세로정렬해줌 -> column 방향 정렬  */
+  /* align-items 로 세로방향 정렬 */
+  /* space between 은  */
+  /* space around 양쪽에 여백 2간격 */
+  /* space even 은 한쪽 여백 1간격 */
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+}
+.topNav a {
+  color: white;
+  text-decoration: none;
+  /* a태그에 밑줄을 없애는 방법 */
+}
+/* .topNav > a 오직 바로 아래있는 자식 a 태그에 해당됨 */
+.topNav__logo {
+  /* width: 200px; */
+  height: 36px;
+}
+.topNav__buttons {
+  display: flex;
+  gap: 16px;
+}
