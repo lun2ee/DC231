@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* box-sizing_ 더 정확한 width를 위해서 예를 들면 width 100 이라고 설정을 했으면 
+  padding 값을 설정한 width 에서 정화한 padding 값을 주기 위함이다.  */
+  /* 전체 선택자 * 에 해당하는 내용은 항상 기본값으로 깔고 작업해주기  */
+}
+
+.section {
+  /* background-color: red;  */
+}
+.container {
+  --px: 36px;
+  /* --변수: 내가 여기 넣은 값  */
+  /* max-width: 1200px + 내가 여기 넣은 값 ;  */
+  /* background-color: green;  */
+  max-width: calc(1200px + 2 * var(--px));
+  margin-inline: auto;
+  padding-inline: var(--px);
+  /* padding-inline: 내가 여기 넣은 값;  */
+  /* 양옆에 width 값 24px의 여백이 생김  */
+}
+.wrapper {
+  /* background-color: blue;  */
+  padding-block: 32px;
+}
