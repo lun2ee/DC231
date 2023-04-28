@@ -25,27 +25,21 @@ body {
   padding-block: 64px;
 }
 
-.nav .wrapper {
-  display: flex;
-  justify-content: space-between;
-}
-
-.nav__menuWrapper {
-  display: flex;
-  gap: 36px;
-}
-
-.nav .wrapper {
-  padding-block: 12px;
-}
-
 .nav {
   background-color: rgb(0, 0, 0);
   color: fuchsia;
   font-weight: bold;
   font-size: 20px;
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-block: 12px;
+  }
+  &__menuWrapper {
+    display: flex;
+    gap: 36px;
+  }
 }
-
 .button {
   width: -moz-fit-content;
   width: fit-content;
@@ -54,9 +48,8 @@ body {
   padding: 10px 20px;
   border-radius: 8px;
   text-align: center;
-}
-
-.button--type-text {
-  background-color: unset;
-  color: fuchsia;
+  &--type-text {
+    background-color: unset;
+    color: fuchsia;
+  }
 }
