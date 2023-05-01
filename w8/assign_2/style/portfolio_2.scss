@@ -43,6 +43,8 @@ body {
   color: rgb(157, 255, 0);
   font-weight: bold;
   font-size: 20px;
+  container-type: inline-size;
+  container-name: nav;
   .wrapper {
     display: flex;
     justify-content: space-between;
@@ -51,6 +53,17 @@ body {
   &__menuWrapper {
     display: flex;
     gap: 36px;
+  }
+  .lt680px {
+    display: none;
+  }
+  @container nav (width < 42.5rem) {
+    &__menuWrapper {
+      display: none;
+    }
+    .lt680px {
+      display: unset;
+    }
   }
   &__logo {
     font-size: 30px;
@@ -132,5 +145,26 @@ p {
   p {
     max-width: 40ch;
     margin-bottom: 24px;
+  }
+}
+.footer {
+  background-color: gray;
+  color: white;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  li {
+    list-style: none;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    font-size: 0.875rem;
+    gap: 1.5rem;
+  }
+  h2 {
+    margin: 1rem;
   }
 }

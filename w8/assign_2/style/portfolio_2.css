@@ -44,6 +44,8 @@ body {
   color: rgb(157, 255, 0);
   font-weight: bold;
   font-size: 20px;
+  container-type: inline-size;
+  container-name: nav;
 }
 .nav .wrapper {
   display: flex;
@@ -53,6 +55,17 @@ body {
 .nav__menuWrapper {
   display: flex;
   gap: 36px;
+}
+.nav .lt680px {
+  display: none;
+}
+@container nav (width < 42.5rem) {
+  .nav__menuWrapper {
+    display: none;
+  }
+  .nav .lt680px {
+    display: unset;
+  }
 }
 .nav__logo {
   font-size: 30px;
@@ -134,4 +147,25 @@ p {
 #hero2 p {
   max-width: 40ch;
   margin-bottom: 24px;
+}
+
+.footer {
+  background-color: gray;
+  color: white;
+}
+.footer a {
+  text-decoration: none;
+  color: white;
+}
+.footer li {
+  list-style: none;
+}
+.footer .wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  font-size: 0.875rem;
+  gap: 1.5rem;
+}
+.footer h2 {
+  margin: 1rem;
 }
