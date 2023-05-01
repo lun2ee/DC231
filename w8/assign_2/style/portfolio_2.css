@@ -20,6 +20,22 @@ body {
   padding-block: 18px;
 }
 
+.footer {
+  background-color: rgb(0, 0, 0);
+  height: 18.75rem;
+  font-size: 1.875rem;
+  margin-top: 50px;
+  font-style: italic;
+  color: rgb(196, 255, 130);
+}
+.footer__text {
+  margin-top: 3.125rem;
+}
+
+.dummy {
+  color: black;
+}
+
 .wrapper {
   /* background-color: darkcyan; */
   padding-block: 64px;
@@ -70,7 +86,7 @@ body {
   }
 }
 .nav__logo {
-  font-size: 30px;
+  font-size: 50px;
   font-style: italic;
   text-decoration: underline;
 }
@@ -105,7 +121,7 @@ body {
 }
 
 .title {
-  color: blue;
+  color: rgb(0, 0, 0);
   font-style: italic;
   font-weight: 700;
   text-align: left;
@@ -167,30 +183,4 @@ p {
     align-items: center;
     gap: 0;
   }
-}
-#hero2 .footer {
-  background-color: gray;
-  color: white;
-  font-size: 14px;
-}
-#hero2 .footer a {
-  text-decoration: none;
-  color: white;
-}
-#hero2 .footer li {
-  list-style: none;
-}
-#hero2 .footer .wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  font-size: 0.875rem;
-  gap: 1.5rem;
-}
-#hero2 .footer h2 {
-  font-size: 1rem;
-  margin-top: 4px;
-  margin-bottom: 1rem;
-}
-#hero2 .footer li {
-  margin-bottom: 0.5rem;
 }

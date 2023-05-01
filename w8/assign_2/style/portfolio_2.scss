@@ -19,6 +19,20 @@ body {
   padding-inline: 24px;
   padding-block: 18px;
 }
+.footer {
+  background-color: rgb(0, 0, 0);
+  height: 18.75rem;
+  font-size: 1.875rem;
+  margin-top: 50px;
+  font-style: italic;
+  color: rgb(196, 255, 130);
+  &__text {
+    margin-top: 3.125rem;
+  }
+}
+.dummy {
+  color: black;
+}
 
 .wrapper {
   /* background-color: darkcyan; */
@@ -68,7 +82,7 @@ body {
     }
   }
   &__logo {
-    font-size: 30px;
+    font-size: 50px;
     font-style: italic;
     text-decoration: underline;
   }
@@ -104,7 +118,7 @@ body {
   }
 }
 .title {
-  color: blue;
+  color: rgb(0, 0, 0);
   font-style: italic;
   font-weight: 700;
   text-align: left;
@@ -166,33 +180,6 @@ p {
           gap: 0;
         }
       }
-    }
-  }
-  .footer {
-    background-color: gray;
-    color: white;
-    font-size: 14px;
-    a {
-      text-decoration: none;
-      color: white;
-    }
-    li {
-      list-style: none;
-    }
-    .wrapper {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-
-      font-size: 0.875rem;
-      gap: 1.5rem;
-    }
-    h2 {
-      font-size: 1rem;
-      margin-top: 4px;
-      margin-bottom: 1rem;
-    }
-    li {
-      margin-bottom: 0.5rem;
     }
   }
 }
