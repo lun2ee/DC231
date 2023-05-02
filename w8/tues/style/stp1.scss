@@ -1,0 +1,59 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.section {
+  position: relative;
+}
+.container {
+  margin-inline: auto;
+  max-width: 60rem;
+  padding-inline: 1.5rem;
+  background-color: antiquewhite;
+}
+.wrapper {
+  padding-block: 2rem;
+  background-color: lightblue;
+}
+#section1 {
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 1rem;
+  }
+}
+#section2 {
+  height: 200vh;
+  .square {
+    position: sticky;
+    top: 50px;
+    // section2 를 벗어나지 못함.
+  }
+}
+#section3 {
+  height: 200vh;
+}
+.square {
+  position: fixed;
+  width: 12.5rem;
+  aspect-ratio: 1 / 1;
+  &:nth-of-type(1) {
+    background-color: rgb(0, 4, 245);
+  }
+  &:nth-of-type(2) {
+    position: absolute;
+    bottom: 50px;
+    right: 25px;
+    // relative : 원래 있던 공간을 기준으로 움직임.
+    // 부모요소 중에 포지션 속성이 relative 속성이 있는 것에 따른다
+    // body 까지 오르게 된다. 그 전 속성이 static 일경우 (바디에서)
+    // 모든 요소가 기본적으로 static 인데, relative 속성을 준 곳으로 묶여서 움직이게 됨.
+    background-color: rgb(255, 255, 0);
+  }
+  &:nth-of-type(3) {
+    background-color: rgb(243, 154, 246);
+  }
+}
+// .square:nth-of-type(1)
