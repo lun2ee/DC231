@@ -23,6 +23,11 @@ img {
   padding-block: 2rem;
 }
 
+#section1 .wrapper {
+  display: flex;
+  gap: 1rem;
+}
+
 .card {
   background-color: white;
   max-width: 18.75rem;

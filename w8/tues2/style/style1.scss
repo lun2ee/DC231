@@ -20,6 +20,13 @@ img {
 .wrapper {
   padding-block: 2rem;
 }
+#section1 {
+  // id section1 의 wrapper 안에 속한 class: card 속성에 영향을 줌.
+  .wrapper {
+    display: flex;
+    gap: 1rem;
+  }
+}
 .card {
   background-color: white;
   //   -> 작업하기 편리하게 칼라는 눈에 잘 보이는 칼라로 설정
