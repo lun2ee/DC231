@@ -1,0 +1,106 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+}
+img {
+  display: block;
+  //   : 카드 ui에 이미지와 텍스트 사이 gap을 정리해주기 = 이미지 속성을 inline 에서 block 으로 바꿔주기
+}
+.container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+@media (width < 37.5rem) {
+  .container {
+    padding-inline: 1rem;
+  }
+}
+.wrapper {
+  padding-block: 2rem;
+}
+.card {
+  background-color: white;
+  //   -> 작업하기 편리하게 칼라는 눈에 잘 보이는 칼라로 설정
+  //   이미지와 텍스트 사이에 작은 gap 이 생기게 된다 -> descenders 처리하는것 때문
+  // : 이 문제를 해결하기 위해서는 이미지를 inline 요소가 아닌, box 요소로 처리해주면 됨.
+  max-width: 18.75rem;
+  border: 0.0625rem solid #ccc;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  //   border 값을 카드 ui 에 넣어주었을때 이미지가 카드Ui에 포함되지 않은 이슈 해결
+  &__img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    // 가로 / 세로 비율을 일부로 지정해주고 싶다면 -> aspect-ratio
+    // 이미지가 왜곡되지 않은 상태로 들어가게 된다
+    object-fit: cover;
+  }
+  &__text {
+    padding: 1rem;
+    h3 {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+      //   background-color: antiquewhite;
+      //   : 글자 한 줄에 대한 높이 값을 설정하는 것.
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      $lineHeightVal: 1.5rem;
+      $clampLine: 4;
+      //   : 몇 줄을 쓸지 설정할 수 있음 (숫자 설정 가능)
+      //   : text-overflow ellipsis 두줄 인터넷에 서칭
+      line-height: $lineHeightVal;
+      //   p 태그의 글자 간격을 줄 수 있음. 더 높은 값으로 line-height 설정하면 됨.
+      overflow: hidden;
+      //   :글자가 넘치면 감춰라
+      text-overflow: ellipsis;
+      //   :글자가 넘어가면 ... 으로 해주는 기능
+      //   white-space: nowrap;
+      //   : 위에 두 줄의 속성을 적용시키기 위해서 입력해야하는 속성 (한줄 입력하고 ... 하게 하려면 white-space)
+      //   그렇다면 여러줄일때 ... 입력을 하고 싶다면?
+      display: -moz-box;
+      display: -webkit-box;
+      -moz-box-orient: vertical;
+      -webkit-box-orient: vertical;
+      -moz-line-clamp: 5;
+      -webkit-line-clamp: $clampLine;
+      max-height: $clampLine * $lineHeightVal;
+      //   이만큼의 속성을,,, 넣어줘야한다는것,, :이것이 하드코딩하는 방법임.
+    }
+  }
+  &__buttons {
+    padding: 1rem;
+    display: flex;
+    // inline으로 일렬로 정렬
+    justify-content: end;
+    // 맨 오른쪽에 붙음
+    gap: 0.5rem;
+    // : 카드에 담기 , 더 보기 사이 값을 줌 8px
+  }
+}
+.button {
+  padding: 0.5rem 1rem;
+  //   : 위 아래 8px(0.5rem)/ 좌우에 16px (1rem)
+  font-size: 0.875rem;
+  line-height: 0.875rem;
+  font-weight: bold;
+  background-color: blue;
+  color: rgba($color: #ffffff, $alpha: 0.87);
+  border-radius: 62.4375rem;
+  &--type {
+    &-text {
+      // <div
+      //         class="button button--type-text"
+      //       >
+      //         더 보기
+      //       </div>
+      background-color: unset;
+      color: blue;
+      padding-inline: 0.5rem;
+      //   좌우에 8px (0.5rem) 으로 수정
+    }
+  }
+}
