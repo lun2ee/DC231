@@ -27,6 +27,11 @@ img {
     gap: 1rem;
   }
 }
+#card2 {
+  position: relative;
+  // top: 20px;
+  // left: 40px;
+}
 .card {
   background-color: white;
   //   -> 작업하기 편리하게 칼라는 눈에 잘 보이는 칼라로 설정
@@ -110,4 +115,29 @@ img {
       //   좌우에 8px (0.5rem) 으로 수정
     }
   }
+}
+.badge {
+  position: absolute;
+  // 자리를 차지하게 않게끔 사진 위에 숫자가 새겨짐
+  right: -0.5rem;
+  top: -0.5rem;
+  // position: relative 인 친구가 없으니까 body까지 날라가 버림
+  aspect-ratio: 1 / 1;
+  // 1 ㄷ 1 비율로 만들기
+  min-width: 1.25rem;
+  // aspect-ratio 를 넣어줘도 원이 짜부가 됨 -> min-width 으로 원형을 맨들어 줘야함.
+  width: fit-content;
+  // div 는 가능한 가로를 꽉 채우려고 하는 속성을 가지고 있어, 그러지말고 숫자만큼의 사이즈에 맞추기 위함
+  padding: 0.25rem;
+  font-size: 0.6875rem;
+  line-height: 0.75rem;
+  font-weight: bold;
+  background-color: red;
+  color: rgba($color: #ffffff, $alpha: 0.87);
+  border-radius: 62.4375rem;
+  // 999px
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // 가운데 위치하게 함
 }

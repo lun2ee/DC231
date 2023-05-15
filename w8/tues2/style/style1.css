@@ -28,6 +28,10 @@ img {
   gap: 1rem;
 }
 
+#card2 {
+  position: relative;
+}
+
 .card {
   background-color: white;
   max-width: 18.75rem;
@@ -81,4 +85,24 @@ img {
   background-color: unset;
   color: blue;
   padding-inline: 0.5rem;
+}
+
+.badge {
+  position: absolute;
+  right: -0.5rem;
+  top: -0.5rem;
+  aspect-ratio: 1/1;
+  min-width: 1.25rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.25rem;
+  font-size: 0.6875rem;
+  line-height: 0.75rem;
+  font-weight: bold;
+  background-color: red;
+  color: rgba(255, 255, 255, 0.87);
+  border-radius: 62.4375rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
