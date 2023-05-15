@@ -12,6 +12,7 @@ img {
 .container {
   margin-inline: auto;
   padding-inline: 2rem;
+  max-width: 60rem;
 }
 
 @media (width < 37.5rem) {
@@ -21,11 +22,19 @@ img {
 }
 .wrapper {
   padding-block: 2rem;
+  min-height: 100dvh;
 }
 
 #section1 .wrapper {
   display: flex;
+  align-items: flex-start;
   gap: 1rem;
+}
+
+#card3 {
+  position: sticky;
+  top: 5px;
+  left: 40px;
 }
 
 #card2 {
@@ -33,8 +42,10 @@ img {
 }
 
 .card {
-  background-color: white;
   max-width: 18.75rem;
+}
+.card__roundedBorder {
+  background-color: white;
   border: 0.0625rem solid #ccc;
   border-radius: 0.5rem;
   overflow: hidden;

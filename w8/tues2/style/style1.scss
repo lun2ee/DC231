@@ -11,6 +11,8 @@ img {
 .container {
   margin-inline: auto;
   padding-inline: 2rem;
+  max-width: 60rem;
+  // 최대 너비값 기준을 지정해주기 960px 까지
 }
 @media (width < 37.5rem) {
   .container {
@@ -19,29 +21,60 @@ img {
 }
 .wrapper {
   padding-block: 2rem;
+  min-height: 100dvh;
+  // vh= 브라우저 창 높이를 길게..>?
 }
 #section1 {
   // id section1 의 wrapper 안에 속한 class: card 속성에 영향을 줌.
   .wrapper {
+    // position: relative;
+    // card3 의 position 값을 body 가 아닌 wrapper 에서부터 적용을 하고싶다면!
+    // position: fixed; 는 wrapper 에다가 position: relative 를 넣어주어도 반응하지 않는다
     display: flex;
+    align-items: flex-start;
     gap: 1rem;
   }
 }
+#card3 {
+  // position: static;
+  // 아무런 변화가 없음을 볼 수 있음 (기본임)
+  // position: relative;
+  // top , left 값에 따라 움직여지는 것을 볼 수 있음
+  // position: absolute;
+  // 다른 position:relative 값을 주지 않는 이상 body에서부터 적용이 된다.
+  // position: fixed;
+  // 창의 왼쪽 위에서부터 0,0을 기준으로 해서 묶이게 된다.
+  // 스크롤을 했을때 남아있는 놈 (계속 쫓아오는 사이드바 같은 놈 또는 따라오는 광고 등)
+  position: sticky;
+  // wrapper 영역 안쪽에서는 계속 스크롤이 가능하나, 영역 끝나는 지점에서는 갇혀서 따라오지 않는 놈
+  // 위 아래 뿐만 아니라 좌우로도 sticky 는 가능함
+  top: 5px;
+  // position: sticky 인 경우 top 값을 유지한 여백으로 내려오게 된다.
+  // bottom 값을 입력해도 성립이 되지않음.
+  left: 40px;
+}
 #card2 {
   position: relative;
+  // position: sticky;
+  // position: static;
+  // position: fixed;
+  // position 이 그냥 static 일 때는 숫자 원형이 다른 곳으로 튕겨져 나간다.
   // top: 20px;
   // left: 40px;
 }
 .card {
-  background-color: white;
-  //   -> 작업하기 편리하게 칼라는 눈에 잘 보이는 칼라로 설정
-  //   이미지와 텍스트 사이에 작은 gap 이 생기게 된다 -> descenders 처리하는것 때문
-  // : 이 문제를 해결하기 위해서는 이미지를 inline 요소가 아닌, box 요소로 처리해주면 됨.
   max-width: 18.75rem;
-  border: 0.0625rem solid #ccc;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  //   border 값을 카드 ui 에 넣어주었을때 이미지가 카드Ui에 포함되지 않은 이슈 해결
+
+  &__roundedBorder {
+    background-color: white;
+    //   -> 작업하기 편리하게 칼라는 눈에 잘 보이는 칼라로 설정
+    //   이미지와 텍스트 사이에 작은 gap 이 생기게 된다 -> descenders 처리하는것 때문
+    // : 이 문제를 해결하기 위해서는 이미지를 inline 요소가 아닌, box 요소로 처리해주면 됨.
+    border: 0.0625rem solid #ccc;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    //   border 값을 카드 ui 에 넣어주었을때 이미지가 카드Ui에 포함되지 않은 이슈 해결
+  }
   &__img {
     width: 100%;
     aspect-ratio: 4 / 3;
