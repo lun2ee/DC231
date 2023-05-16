@@ -63,10 +63,11 @@ img {
   // left: 40px;
 }
 .card {
+  cursor: pointer;
   max-width: 18.75rem;
 
   &__roundedBorder {
-    background-color: white;
+    // background-color: white;
     //   -> 작업하기 편리하게 칼라는 눈에 잘 보이는 칼라로 설정
     //   이미지와 텍스트 사이에 작은 gap 이 생기게 된다 -> descenders 처리하는것 때문
     // : 이 문제를 해결하기 위해서는 이미지를 inline 요소가 아닌, box 요소로 처리해주면 됨.
@@ -74,6 +75,26 @@ img {
     border-radius: 0.5rem;
     overflow: hidden;
     //   border 값을 카드 ui 에 넣어주었을때 이미지가 카드Ui에 포함되지 않은 이슈 해결
+    transition: transform 500ms ease,
+      box-shadow 500ms ease;
+    // 카드의 트랜지션이 뭉근~하게 움직여짐
+    // or
+    // transition: all 500ms ease ; 서로 다른 시간에 다른 타이밍 functiond 으로 움직일려면 이런 방식은 안됨
+    // 대신에 동일한 function으로 움직이려고 한다면 all 사용 가능하다
+    &:hover {
+      transform: translateY(-0.125rem) scale(1.01);
+      // scale 1.01 은 1퍼센트 커지는 것, 1.1 은 10퍼센트 커지는것 그리고 Y로 2px 정도 이동시켜준것..
+      // 그림자 넣기
+      box-shadow: 0 0.5rem 0.75rem 0.375rem
+          rgba(0, 0, 0, 0.15),
+        0 0.25rem rgba(0, 0, 0, 0.3);
+      .card {
+        &__img {
+          filter: grayscale(0%);
+          // 카드 위에 hover를 했을떄 grayscale 이 0으로 빠지게 된다!
+        }
+      }
+    }
   }
   &__img {
     width: 100%;
@@ -81,6 +102,14 @@ img {
     // 가로 / 세로 비율을 일부로 지정해주고 싶다면 -> aspect-ratio
     // 이미지가 왜곡되지 않은 상태로 들어가게 된다
     object-fit: cover;
+    // 이미지에 틴트를 먹이고 싶다면,,,
+    filter: grayscale(100%);
+    transition: filter 500ms ease;
+    // 이미지 필터에도 ease 를 적용
+    &:hover {
+      filter: grayscale(0);
+      // 요 방법은 hover 를 했을때 이미지가 grayscale 에서 칼라로 변경
+    }
   }
   &__text {
     padding: 1rem;
@@ -127,6 +156,7 @@ img {
   }
 }
 .button {
+  cursor: pointer;
   padding: 0.5rem 1rem;
   //   : 위 아래 8px(0.5rem)/ 좌우에 16px (1rem)
   font-size: 0.875rem;
@@ -135,6 +165,12 @@ img {
   background-color: blue;
   color: rgba($color: #ffffff, $alpha: 0.87);
   border-radius: 62.4375rem;
+  transition: background-color 300ms ease;
+  //  천천히 버튼에 색이 채워짐 ease 는 색깔 보다는 크기요소를 바꿀때 효과적임.
+  &:hover {
+    background-color: cornflowerblue;
+    // 카트에 담기 버튼에만 hover 했을 때 색 변화가 일어나고,
+  }
   &--type {
     &-text {
       // <div
@@ -146,6 +182,13 @@ img {
       color: blue;
       padding-inline: 0.5rem;
       //   좌우에 8px (0.5rem) 으로 수정
+      transition: color 300ms ease;
+      &:hover {
+        background-color: unset;
+        // 더보기 버튼은 unset으로 설정이 되지 않음
+        color: cornflowerblue;
+        // 더보기 글자에만 색상 적용 hover를 했을때
+      }
     }
   }
 }
