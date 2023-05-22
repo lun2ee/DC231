@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>
+      w10_stp4(박스 클릭했을때 색변화_2(box1))
+    </title>
+    <style>
+      .container {
+        margin-inline: auto;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+      }
+      body {
+        margin: 0;
+      }
+      .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 12.5rem;
+        aspect-ratio: 1/1;
+        background-color: beige;
+        border: 1px solid #000;
+        transition: background-color 250ms
+          ease-in-out;
+      }
+      .box:hover {
+        background-color: bisque;
+      }
+      .box--clicked {
+        background-color: cornflowerblue;
+      }
+      .box--clicked:hover {
+        background-color: cornflowerblue;
+      }
+    </style>
+    <!-- hover 했을때 색상과 애니메이션이 변화하는것에 있어서 css로 다룰수 있지만 click 했을때 변화하는것은 JS로 다루게 됨  -->
+  </head>
+  <body>
+    <!-- <script src="js/jsfile.js" defer></script> -->
+    <!-- 된다 -->
+    <!-- <script src="js/jsfile.js"></script> -->
+    <!-- 안된다 -->
+    <div class="container">
+      <div id="box1" class="box box--clicked">
+        box1
+      </div>
+      <div id="box2" class="box">box2</div>
+      <div id="box3" class="box">box3</div>
+    </div>
+  </body>
+  <script src="js/jsfile.js"></script>
+  <!-- 된다 -->
+</html>
