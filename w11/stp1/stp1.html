@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,500,0,0"
+    />
+    <title>w11 tue</title>
+
+    <style>
+      div {
+        background-color: rgba(255, 0, 0, 0.05);
+      }
+      .card__top {
+        display: flex;
+        justify-content: space-between;
+        /* 마아아악 펼쳐져라라라ㅏㅏ 간격에 맞게  */
+        align-items: center;
+        padding-inline: 1rem 0.25rem;
+      }
+      .card__top__wrap-1 {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      .card__top__profile {
+        width: 2.5rem;
+        height: 2.5rem;
+        display: flex;
+        /* 가로로는 텍스트-중앙정렬 할 수 있지만 flex 는 세로정렬하기 위함임  */
+        justify-content: center;
+        /* 정렬을 하고 있는 방향으로 정렬을 하는 것임 (가로라고 절대 생각하지 말것) */
+        align-items: center;
+        /* 이 축의 아이템을 어떻게 놓을것인가  */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="card__top">
+        <div class="card__top__wrap-1">
+          <div class="card__top__profile">a</div>
+          <div class="card__top__wrap-2">
+            <div class="card__top__header">
+              header
+            </div>
+            <div class="card__top__subheader">
+              subheader
+            </div>
+          </div>
+        </div>
+
+        <div class="card__top__button">
+          <span class="material-symbols-outlined">
+            more_vert
+          </span>
+        </div>
+      </div>
+      <div class="card__img"></div>
+      <div class="card__bottom"></div>
+    </div>
+  </body>
+</html>
