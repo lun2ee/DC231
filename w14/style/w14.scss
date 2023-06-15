@@ -1,4 +1,151 @@
 * {
+  box-sizing: border border-box;
+}
+html {
+  color-scheme: light dark;
+}
+body {
+  background-color: black;
+  color: white;
+  overflow-y: hidden;
+  width: 100vw;
+  height: 100dvh;
   margin: 0;
-  padding: 0;
+  font-family: system-ui;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  &::after {
+    content: "";
+    height: 1px;
+    width: 100%;
+    background-color: aqua;
+    position: fixed;
+    bottom: 200px;
+  }
+}
+main {
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  width: 100%;
+  height: 100%;
+}
+.animTrigger {
+  position: relative;
+  &::after {
+    content: "";
+    height: 1px;
+    width: 100%;
+    background-color: fuchsia;
+    position: absolute;
+    top: 75%;
+  }
+}
+section {
+  scroll-snap-align: center;
+  // center -> 스크롤 스냅이 중앙에 걸리게 한다.
+  //   start 일 경우에는 스크롤 스냅이 윗부분에 걸리게 한다
+  // end 일 경우에는 스크롤 스냅이 아랫부분에 걸리게 한다.
+  overflow: hidden;
+}
+// section:nth-child(even) {
+//   background-color: black;
+// }
+.wrapper {
+  width: min(60ch, 100% - 4rem);
+  min-height: max(600px, 100dvh);
+  margin-inline: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content {
+  // border: 1px solid red;
+}
+#section2 {
+  .animTarget {
+    transform: scale(50);
+    transition: transform 500ms ease-out;
+    padding-left: 6.25rem;
+  }
+  &.triggered {
+    .animTarget {
+      transform: scale(1);
+    }
+  }
+}
+// #section2.triggered{} ->section2 triggered 가 붙은 경우
+// #section2 .triggered {} -> section2 밑에 있는 triggered 차이 잘 파악하기
+#section3 {
+  .content {
+    .animTarget {
+      transform: translateX(200vw);
+      transition: transform 500ms ease-out;
+    }
+    &.triggered {
+      .animTarget {
+        transform: translate(0);
+      }
+    }
+  }
+}
+#section4 {
+  .content.animTarget {
+    transition: background-color 500ms ease-out,
+      border 500ms ease-out;
+  }
+  h2.animTarget {
+    transform: translateX(-100vw);
+    transition: transform 500ms ease-out;
+  }
+  p.animTarget {
+    transform: translateX(100vw);
+    transition: transform 500ms ease-out;
+  }
+  &.triggered {
+    .content.animTarget {
+      background-color: lavender;
+      border: 0px solid transparent;
+    }
+    h2.animTarget {
+      transform: translateX(0);
+    }
+    p.animTarget {
+      transform: translateX(0);
+    }
+  }
+}
+#section5 {
+  &.triggered {
+    .animTarget {
+      animation: wiggle 2s linear infinite;
+    }
+  }
+}
+@keyframes wiggle {
+  0%,
+  7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-15deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  30% {
+    transform: rotateZ(6deg);
+  }
+  35% {
+    transform: rotateZ(-4deg);
+  }
+  40%,
+  100% {
+    transform: rotateZ(0);
+  }
 }
