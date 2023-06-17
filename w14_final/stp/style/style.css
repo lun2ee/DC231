@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+.wrapper {
+  width: min(60ch, 100% - 4rem);
+  min-height: max(600px, 100dvh);
+  margin-inline: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contents {
+  margin-inline: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+#section1 {
+  background-color: black;
+  color: white;
+}
+#section1 .title {
+  font-size: 3.125rem;
+  font-weight: 300;
+  font-family: fantasy;
+  text-align: center;
+}
+
+#section0 {
+  background: linear-gradient(rgb(0, 0, 0) 32%, white);
+}
+
+#section2 {
+  background-color: white;
+}
+#section2 .contents.animTarget {
+  transform: scale(0);
+  transition: transform 500ms ease-out;
+}
+#section2 .contents.triggered.animTarget {
+  transform: scale(1);
+}
+#section2 #wl {
+  font-family: fantasy;
+  padding-left: 15.625rem;
+  padding-top: 6.25rem;
+}
+#section2 #space {
+  padding-left: 6.25rem;
+}
+
+#button {
+  display: flex;
+}
+
+img {
+  width: 81.25rem;
+}
+
+.media {
+  aspect-ratio: 16/9;
+}
