@@ -155,3 +155,21 @@ body {
     background-color: rgb(24, 0, 0.3);
   }
 }
+.section4 {
+  background: linear-gradient(white, purple);
+  .contents {
+    &.animTarget {
+      transform: scale(0);
+      transition: transform 500ms ease-out;
+    }
+    &.triggered {
+      &.animTarget {
+        transform: scale(1);
+      }
+    }
+  }
+}
+#al {
+  font-family: fantasy;
+  text-align: center;
+}
