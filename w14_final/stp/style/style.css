@@ -42,6 +42,11 @@ body {
 #section0 {
   background: linear-gradient(rgb(0, 0, 0) 32%, white);
 }
+#section0.scrollArea {
+  justify-content: center;
+  aspect-ratio: 1/6;
+  width: 100%;
+}
 
 #section2 {
   background-color: white;
@@ -55,25 +60,62 @@ body {
 }
 #section2 #wl {
   font-family: fantasy;
-  padding-left: 15.625rem;
-  padding-top: 6.25rem;
+  text-align: center;
 }
 #section2 #space {
-  padding-left: 6.25rem;
+  text-align: center;
 }
 
 #button {
   display: flex;
 }
 
-img {
-  width: 81.25rem;
+.container {
+  margin-inline: auto;
+  padding-inline: 2rem;
 }
 
-.media {
-  aspect-ratio: 16/9;
+@media (width < 37.5rem) {
+  .container {
+    padding-inline: 1rem;
+  }
+}
+.card {
+  border: 0.0625rem solid #ccc;
+  border-radius: 0.5rem;
+  max-width: 18.75rem;
+  overflow: hidden;
+}
+.card__img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 4/3;
+  width: 100%;
+}
+.card__text {
+  padding: 1rem;
+}
+.card__text h3 {
+  font-family: fantasy;
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 0.625rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.card__button {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-#follow {
-  position: sticky;
+.button {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  line-height: 0.875rem;
+  font-family: fantasy;
+  background-color: rgb(97, 97, 255);
+  color: rgba(255, 255, 255, 0.87);
+  border-radius: 62.4375rem;
 }

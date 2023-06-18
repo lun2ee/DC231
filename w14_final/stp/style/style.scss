@@ -40,6 +40,11 @@ body {
     rgb(0, 0, 0) 32%,
     white
   );
+  &.scrollArea {
+    justify-content: center;
+    aspect-ratio: 1/6;
+    width: 100%;
+  }
 }
 #section2 {
   background-color: white;
@@ -56,29 +61,64 @@ body {
   }
   #wl {
     font-family: fantasy;
-    padding-left: 15.625rem;
-    padding-top: 6.25rem;
+    text-align: center;
+    // padding-left: 15.625rem;
+    // padding-top: 6.25rem;
   }
-
   #space {
-    padding-left: 6.25rem;
+    text-align: center;
   }
 }
 #button {
   display: flex;
 }
-img {
-  //   aspect-ratio: 16/9;
-  width: 81.25rem;
-  //   margin-inline: auto;
+.container {
+  margin-inline: auto;
+  padding-inline: 2rem;
 }
-.media {
-  aspect-ratio: 16/9;
-  //   background-color: black;
-  //   margin-inline: auto;
-  //   align-items: center;
-  //   justify-content: center;
+@media (width<37.5rem) {
+  .container {
+    padding-inline: 1rem;
+  }
 }
-#follow {
-  position: sticky;
+.card {
+  border: 0.0625rem solid #ccc;
+  border-radius: 0.5rem;
+  // background-color: rgb(0, 255, 234);
+  max-width: 18.75rem;
+  overflow: hidden;
+  &__img {
+    object-fit: cover;
+    aspect-ratio: 4/3;
+    width: 100%;
+  }
+  &__text {
+    padding: 1rem;
+    h3 {
+      font-family: fantasy;
+      text-align: center;
+      font-size: 1.25rem;
+      line-height: 0.625rem;
+      // background-color: antiquewhite;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+  }
+  &__button {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    // 오른쪽에 붙는다.
+    gap: 0.5rem;
+  }
+}
+.button {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  line-height: 0.875rem;
+  // font-weight: bold;
+  font-family: fantasy;
+  background-color: rgb(97, 97, 255);
+  color: rgba($color: #ffffff, $alpha: 0.87);
+  border-radius: 62.4375rem;
 }
