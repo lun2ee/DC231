@@ -7,10 +7,24 @@ html {
 }
 
 body {
+  overflow-y: hidden;
+  width: 100vw;
+  height: 100dvh;
   margin: 0;
   font-family: system-ui;
   font-size: 1.125rem;
   line-height: 1.5;
+}
+
+section {
+  scroll-snap-align: center;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
 }
 
 .wrapper {
@@ -89,6 +103,7 @@ body {
 
 #section3 {
   gap: 6.25rem;
+  background-color: cadetblue;
 }
 
 #button {
@@ -110,6 +125,7 @@ body {
   margin-top: -6.25rem;
   border: 0.0625rem solid #ccc;
   border-radius: 0.5rem;
+  background-color: rgb(73, 120, 121);
   max-width: 18.75rem;
   overflow: hidden;
 }
@@ -161,4 +177,9 @@ body {
 #al {
   font-family: fantasy;
   text-align: center;
+}
+
+a {
+  color: white;
+  text-decoration: none;
 }
