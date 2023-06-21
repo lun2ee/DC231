@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="style/style.css"
+    />
+    <script
+      src="script/intersectionObserver.js"
+      defer
+    ></script>
+    <title>w12-wrapup-stp2</title>
+  </head>
+  <body>
+    <!-- 화면에 어떤 개체가 들어왔냐/안들어왔냐를 판단하기 위해서 관찰할 개체들에게 이름을 붙여줬는데, -> animTrigger 임  -->
+
+    <!-- 시멘틱태그  -->
+    <main>
+      <section class="animTrigger" id="section1">
+        <div class="wrapper">
+          <div class="content">
+            <h2 class="font">chapter 1</h2>
+            <img
+              src="wrapper_img/앨리스 숲이미지.jpg"
+              alt="숲"
+            />
+          </div>
+        </div>
+      </section>
+      <section id="section3">
+        <div class="wrapper">
+          <div class="content animTrigger">
+            <h2 class="animTarget">
+              트위들디의 이야기.
+            </h2>
+            <p>
+              앨리스는 바다로 변한 물웅덩이에서
+              벗어나, 젖은 몸을 말린다고
+              뛰어다니는 도도새 무리들을 만난다.
+              다시 앨리스는 하얀 토끼를 발견하고
+              그를 따라 숲으로 들어가서 쌍둥이
+              형제인 트위들디와 트위들덤을 만난다.
+              트위들디와 트위들덤은 하얀 토끼를
+              따라가려는 앨리스를 붙잡고 호기심
+              때문에 비극적인 사건을 겪게 된 굴과
+              바다표범 그리고 목수 이야기를
+              들려준다. 또 다른 이야기를 시작하는
+              트위들디와 트위들덤을 떠나 숲 속을
+              걷던 앨리스는 하얀 토끼의 집을
+              발견한다.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="animTrigger" id="section4">
+        <div class="wrapper">
+          <div class="content animTarget">
+            <h2 class="animTarget">
+              하얀토끼와의 만남.
+            </h2>
+            <p class="animTarget">
+              앨리스를 자신의 하녀로 착각한 하얀
+              토끼 때문에 집 안으로 들어갔다가
+              쿠키를 먹은 앨리스는 마구 커진다.
+              도마뱀 빌과 도도새가 하얀 토끼의
+              집에서 앨리스를 내쫓으려 여러 가지
+              시도를 하던 중에, 당근을 먹은
+              앨리스가 다시 줄어들면서 집을
+              빠져나온다. 말하는 꽃들의 정원에
+              도착한 앨리스는 꽃들의 아름다운
+              노래를 듣는다. 꽃들은 새로 등장한
+              앨리스에게 무슨 꽃이냐고 묻자
+              앨리스는 자신은 꽃이 아니라고
+              대답한다. 꽃들은 보잘 것 없는 들꽃이
+              분명하다면서 앨리스를 정원에서
+              쫒아낸다. 곧이어 앨리스는 버섯
+              위에서 담배를 피우는 쐐기벌레를
+              만난다. 넌 누구냐는 질문부터
+              시작하여 쐐기벌레는 줄곧 무례한
+              태도로 앨리스를 대한다. 화가 난
+              앨리스가 떠나려 하자 쐐기벌레는 다시
+              앨리스를 불러들여 몸이 커지고
+              작아지게 만드는 버섯의 비밀을
+              알려준다.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
